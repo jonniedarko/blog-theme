@@ -1,0 +1,231 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+
+/*.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/ * Space out content a bit * /  
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views * /
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header * /
+.header {
+    border-bottom: 1px solid #e5e5e5;
+
+    /* Make the masthead heading the same height as the navigation * /
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+    }
+}
+
+/* Custom page footer * /
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button * /
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+    }
+}
+
+/* Supporting marketing content * /
+.marketing {
+    margin: 40px 0;
+    p + h4 {
+        margin-top: 28px;
+    }
+}
+
+/* Responsive: Portrait tablets and up * /
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier * /
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead * /
+    .header {
+        margin-bottom: 30px;
+    }
+
+    /* Remove the bottom border on the jumbotron for visual effect * /
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+*/
+code {
+    color: #000000;
+}
+/* line 4, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* line 18, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+.bp-reset-element, body, h1, h2, h3, h4, h5, h6, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, blockquote, q, th, td, caption, table,
+div, span, object, iframe, p,
+pre, a, abbr, acronym, address,
+code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend,
+caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 20, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 21, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  quotes: "" "";
+}
+/* line 67, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  float: none !important;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 23, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 27, ../../sass/main.scss */
+body {
+  background-color: #FAFAFA;
+  font-size: 17.5px;
+font-size: 1.75rem;
+line-height: 1.4;
+  font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.detail-content .code-path {
+  max-width: 960px;
+  padding: 5px;
+  padding-bottom: 25px;
+  background-color: #E0E0E0;
+  color: #3a3a3a;
+  border: solid 1px #B6B6B6;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  margin-bottom: -33px;
+  margin-top: 20px;
+}
+
+.white-box {
+    max-width: 1064px;
+    margin: 50px auto 50px auto;
+    color: #3a3a3a;
+    background-color: #fff;
+    border: solid #DFDFDF 1px;
+    padding: 40px;
+    max-width: 984px;
+    font-family: "proxima-nova", Helvetica, Arial;
+}
+
+.detail-content {
+    width: auto;
+    max-width: 1064px;
+    margin: 50px auto 50px auto;
+    color: #3a3a3a;
+    max-width: 1034px;
+    padding: 15px;
+}
+
+.detail-content p {
+color: #5c5c5c;
+text-align: left;
+}
+.detail-content > * {
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
+color: #3a3a3a;
+font-family: "proxima-nova";
+margin-top: 10px;
+margin-bottom: 10px;
+}
+p {
+margin-top: 10px;
+margin-bottom: 10px;
+text-align: center;
+}
+pre {
+    border-radius: 0 !important; 
+    background-color: transparent !important;
+}
+code {
+    font-size: small !important;
+}
+p>code, li>code, dd>code, td>code {
+background: #eee;
+padding: 0 5px 2px;
+border-radius: 4px;
+position: relative;
+top: -1px;
+margin: 0 3px 0 1px;
+font-size: 90%;
+}
