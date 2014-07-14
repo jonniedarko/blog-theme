@@ -5,6 +5,7 @@
         <title>new_themes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css styles/vendor.css -->
@@ -13,7 +14,7 @@
         <!-- endbuild -->
 
         <!-- build:css styles/main.css -->
-        
+
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" type="text/css" href="styles/monokai_sublime_hijs.css">
         <!--<link rel="stylesheet" type="text/css" href="styles/monokai_sublime.css">-->
@@ -32,10 +33,8 @@
         <![endif]-->
 
         <div class="container">
-        
-            <div class="detail-content white-box">
 
-            <h1>Node-Resful-Api</h1>
+            <div class="detail-content white-box">
 
             <h2>What is REST?</h2>
             <p><strong>REST</strong> (Representational State Transfer) is an architecture style for designing networked applications. It Relies on Stateless, Client-Server, Cacheable Communicationjs Protocol and is Most often done so over HTTP.
@@ -82,44 +81,44 @@ app.listen(1234, function(){
 </code>
 </pre>
 
+
             <p>BAM! There you have it, a very simple RESTful service.Run it with the command</p>
         <pre><code class="bash">node server.js</code></pre>
-            Now try testing with<a href="http://www.getpostman.com/">Postman</a>
-            <img title="Postman Screen Shot" src="https://raw.githubusercontent.com/jonniedarko/Node-Resful-Api/master/screenshots/Postman%20screen%20shot%201.jpg" align="middle"/>
+            <p>Now try testing with<a href="http://www.getpostman.com/"> Postman</a></p>
+            <img title="Postman Screen Shot" style="max-width: 960px !important" src="https://raw.githubusercontent.com/jonniedarko/Node-Resful-Api/master/screenshots/Postman%20screen%20shot%201.jpg" align="middle"/>
 
-           <a href="https://github.com/jonniedarko/Node-Resful-Api/commit/5b12f157674625d7d05a954c7a7e81122304c017">Code so far</a>
+           <p><a href="https://github.com/jonniedarko/Node-Resful-Api/commit/5b12f157674625d7d05a954c7a7e81122304c017">Code so far</a></p>
 
-            Note we also went a small step further then the scope of the project with the line
-           <pre><code class="js">app.use(express.static(path.join(__dirname, "public")));</code></pre>
-            All this does is allows use to server static files from a public directory, so as well as creating a very basic RESTful service we also created a very basic File Server. All we need to do is create our *"public"*
-
+           <p> Note we also went a small step further then the scope of the project with the line</p><br/>
+           <pre><code class="js">app.use(express.static(path.join(__dirname, "public")));</code></pre><br/>
+            <p>All this does is allows use to server static files from a public directory, so as well as creating a very basic RESTful service we also created a very basic File Server. All we need to do is create our <em>"public"</em>
+            <br/><br/>
             Now that we can serve from a public directory we can add static content in our public directory. Give it a go, save a basic HTML Page into the public directory and point your browser to the<a href="http://localhost:1234">localhost on port 1234</a> and you sould retrieve the HTML page in the public directory.
-
-            If you want to continue with front end dev you can create your static *HTML*, *JS* and *CSS* here, you could even install  bower(npm of the front end) but we'll touch on this more in the future when we want to combine our server-side and Front end into a fullstack app. For now I won't be covering anymore front end for this post.
-
+            <br/><br/>
+            If you want to continue with front end dev you can create your static <em>HTML</em>,<em>JS</em>and<em>CSS</em>here, you could even install  bower(npm of the front end) but we'll touch on this more in the future when we want to combine our server-side and Front end into a fullstack app. For now I won't be covering anymore front end for this post.
+            <br/><br/>
             Back to the server-Side
+            <br/><br/>
+            We want to create a barebones CRUD api, so first we need another module, expresses<em>"method-override"</em>module, which lets us use HTTP verbs such as PUT or DELETE in places where the client doesn't support it
+            <br/><br/>
+            <em><strong>NOTE:</strong> It is very important that this module is used before any module that needs to know the method of the request, otherwise it could cause issues which may be difficult to track down.</em>
+            </p>
+            <p>So lets install it:</p>
+           <pre>
+                <code class="bash">                npm install method-override --save
+                </code>
+            </pre>
+            <p>Now inside server.js add the following just after the express require</p>
+            <pre>
+                <code class="javascript">
+                //add after our express require
+                var methodOverride = require('method-override');
+                //add after the static directory setup
+                app.use(methodOverride());
+                </code>
+            </pre>
 
-            We want to create a barebones CRUD api, so first we need another module, expresses *"method-override"* module, which lets us use HTTP verbs such as PUT or DELETE in places where the client doesn't support it
-
-            _**NOTE:** It is very important that this module is used before any module that needs to know the method of the request, otherwise it could cause issues which may be difficult to track down._
-
-            So lets install it:
-           <pre><code class="bash">
-
-                npm install method-override --save
-            
-</code></pre>
-            Now inside server.js add the following just after the express require
-<pre>
-<code class="javascript">
-//add after our express require
-var methodOverride = require('method-override');
-//add after the static directory setup
-app.use(methodOverride());
-</code>
-</pre>
-
-            No we can simulate DELETE and PUT, so lets add some Endpoints to our REST Api. Add the following just before the<code>app.listen(...)</code>
+            <p>No we can simulate DELETE and PUT, so lets add some Endpoints to our REST Api. Add the following just before the<code>app.listen(...)</code></p>
 
            <pre><code class="js">
 
@@ -142,7 +141,7 @@ app.use(methodOverride());
             app.delete('/api/user/:id', function (request, response){
                 response.send('This is not implemented now');
             });
-            
+
 </code></pre>
 
             <p>What we have done here is create a Skeleton for:</p>
@@ -165,7 +164,7 @@ app.use(methodOverride());
            <pre><code class="bash">npm install mongoose --save</code></pre>
            </p>
 
-            <p>Rather then make our Server overly complex and confusing then it needs to be, lets create a CRUD module to store our database interaction. Create two new folders, called lib and config. Inside config create a new javascript file *"db.config.js"* to hold our DB configuration.
+            <p>Rather then make our Server overly complex and confusing then it needs to be, lets create a CRUD module to store our database interaction. Create two new folders, called lib and config. Inside config create a new javascript file<em>"db.config.js"</em>to hold our DB configuration.
             <br /><br /><br />
             So lets get a connection to mongodb going...
             </p>
@@ -185,10 +184,10 @@ var mongoose = require('mongoose');
         console.log("Connected successfull!")
     });
 }
-            
+
 </code></pre>
 <p>
-            And *require* our configuration in our *"server.js"* file.<p>
+            And<em>require</em>our configuration in our<em>"server.js"</em>file.<p>
            <pre><code class="js">// Add the following after requiring the "path" module
 require("./config/db.config")();
 </code></pre>
@@ -196,12 +195,12 @@ require("./config/db.config")();
             <p>Now if we run<code>node server.js</code> you should get the following output:</p>
 
            <pre><code class="bash">Our First Express/Node Server listening on port 1234
-Connected successfull!    
+Connected successfull!
 </code></pre>
 
             <p>If you are getting<code>connection error: failed to connect to [localhost:27017]</code> then you most likely forgot to start Mongodb.
             <br /><br /><br />
-            Next we want to create a Schema and from that a Model which we can export to use in our serve routes. So inside our lib folder create *"user.model.js"* and add the following:<p>
+            Next we want to create a Schema and from that a Model which we can export to use in our serve routes. So inside our lib folder create<em>"user.model.js"</em>and add the following:</p>
 
            <pre><code class="js">var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -214,9 +213,9 @@ var User = new Schema({
 var UserModel = mongoose.model("User", User);
 
 module.exports.UserModel = UserModel;
-            
+
 </code></pre>
-            <p>In order to use this model we need to import the module but before we doe this ltest clean up our code base by moving our routes from *"server.js"* to a new file. Create a new file called *"rest.routes.js"* inside the *"lib"* folder. What we are going to do is return a function that accepts our Express "app" as a parameter.<p>
+            <p>In order to use this model we need to import the module but before we doe this ltest clean up our code base by moving our routes from<em>"server.js"</em>to a new file. Create a new file called<em>"rest.routes.js"</em>inside the<em>"lib"</em>folder. What we are going to do is return a function that accepts our Express "app" as a parameter.<p>
 
            <pre><code class="js">           // rest.routes.js
             module.exports = function(app){
@@ -245,10 +244,10 @@ module.exports.UserModel = UserModel;
                 });
             }
 
-            
+
 </code></pre>
 
-            <p>And our *"server.js"* should look like the following</p>
+            <p>And our<em>"server.js"</em>should look like the following</p>
 
            <pre><code class="js">var express = require('express');
 var methodOverride = require('method-override');
@@ -266,7 +265,7 @@ restRoutes(app);
 app.listen(1234, function(){
     console.log('Our First Express/Node Server listening on port 1234');
 });
-            
+
 </code></pre>
 
             <p>Now Lets make use of our Model by importing into our rest routes module.</p>
@@ -293,24 +292,22 @@ app.listen(1234, function(){
                     }
                });
             });
-            
+
 </code></pre>
 
             <p>Now if you try to post to this you may run into a few issues like "firstname not defined" and if you debug it you will probably find the same is true for request.body....</p>
 
             <p>This is because we need to include the express [body-parser](https://github.com/expressjs/body-parser), in Express 4 we do this by requiring it and including the following with the rest of our configuration:</p>
 
-            Install
-
            <pre><code class="bash">npm install body-parser --save</code></pre>
 
             <p>and include & use in our *"server.js"*</p>
-            
+
 
            <pre><code class="js">            var bodyParser = require('body-parser');
             ......
             app.use(bodyParser.urlencoded({extended: true}))
-            
+
 </code></pre>
             <p>
             this allows us to parse application/x-www-form-urlencoded paramaters, the extended true allows us to extended parse syntax with the<a href="https://github.com/visionmedia/node-querystring"> qs module</a>
@@ -413,7 +410,7 @@ app.listen(1234, function(){
             </div>
 
 
-                
+
             </div>
 
 
@@ -490,6 +487,6 @@ app.listen(1234, function(){
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
-        
+
 </body>
 </html>
